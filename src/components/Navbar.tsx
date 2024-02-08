@@ -11,7 +11,7 @@ import vector from "@/public/logo/vector.svg";
 
 const Navbar: React.FC = () => {
   return (
-    <header className="bg-gradient-to-t from-[#ff7337] to-[#ee4d2d] z-50 h-[120px] sticky top-0 flex flex-col">
+    <header className="bg-gradient-to-t from-[#ff7337] to-[#ee4d2d] z-50 h-[120px]  top-0 flex flex-col">
       <div className="h-1 w-[1200px] mx-auto my-1 px-5 py-1">
         <nav className="m-auto flex justify-between items-center ">
           <div className="flex justify-between items-center gap-3 text-white text-sm">
