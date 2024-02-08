@@ -5,12 +5,15 @@ import seachicon from "@/public/seachicon.svg";
 import facebook from "@/public/logo/facebook.svg";
 import instragam from "@/public/logo/instragm.svg";
 import line from "@/public/logo/line.svg";
+import bell from "@/public/logo/bell.svg";
+import question from "@/public/logo/question.svg";
+import vector from "@/public/logo/vector.svg";
 
 const Navbar: React.FC = () => {
   return (
     <header className="bg-gradient-to-t from-[#ff7337] to-[#ee4d2d] z-50 h-[120px] sticky top-0 flex flex-col">
-      <div className="h-1 w-[1200px] mx-auto my-1 flex justify-around">
-        <nav className="m-auto flex justify-between">
+      <div className="h-1 w-[1200px] mx-auto my-1 px-5 py-1">
+        <nav className="m-auto flex justify-between items-center ">
           <div className="flex justify-between items-center gap-3 text-white text-sm">
             <p className="border-r-2 border-white pr-2">Seller Centre</p>
             <p className="border-r-2 border-white pr-2">เริ่มต้นขายสินค้า</p>
@@ -22,6 +25,24 @@ const Navbar: React.FC = () => {
                 <Image src={instragam} alt="instragam" width={20} />
                 <Image src={line} alt="line" width={20} />
               </div>
+            </div>
+          </div>
+          <div className="flex justify-between items-center gap-5 text-white text-sm ">
+            <div className="flex gap-1">
+              <Image src={bell} alt="facebook" width={20} />
+              <p>การแจ้งเตือน</p>
+            </div>
+            <div className="flex gap-1">
+              <Image src={question} alt="facebook" width={20} />
+              <p>ช่วยเหลือ</p>
+            </div>
+            <div className="flex gap-1">
+              <Image src={vector} alt="facebook" width={20} />
+              <p>ไทย</p>
+            </div>
+            <div className="flex gap-2">
+              <p className="border-r-2 border-white pr-2">สมัครใหม่</p>
+              <p>เข้าสู่ระบบ</p>
             </div>
           </div>
         </nav>
