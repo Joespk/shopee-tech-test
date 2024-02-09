@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <main>
       <section>
-        <div className="container flex flex-col items-center mx-auto py-8 md:py-24 relative">
+        <div className="container flex flex-col items-center mx-auto py-8 md:py-24 relative ">
           <Image
             src={flashsell}
             alt="flashsell"
@@ -32,8 +32,10 @@ export default async function Home() {
         </div>
       </section>
       <section>
-        <div className="container flex justify-around">
-          <div className="grid grid-cols-6 gap-2 mt-3">
+        <div className="container flex flex-col items-center justify-around">
+          <h2 className="my-0 text-orange-500">สินค้าแนะนำประจำวัน</h2>
+          <hr className="w-[1200px] h-px mt-3 mb-4 bg-orange-500 border-2 text-orange-500" />
+          <div className="grid grid-cols-6 gap-2 ">
             {products?.map((product: ProductDTO) => (
               <Simplecard key={product.id} Product={product} />
             ))}
