@@ -15,6 +15,10 @@ export default async function Home() {
     (product: ProductDTO) => product.discountPercentage >= 15
   );
 
+  const TopsellProduct = products.filter(
+    (products: ProductDTO) => products.rating >= 4.5
+  );
+
   return (
     <main>
       <section>
@@ -23,7 +27,7 @@ export default async function Home() {
             ขายดีประจำสัปดาห์
           </h1>
           <div className="grid grid-cols-6 gap-2 mt-3 justify-around">
-            {FlashProducts?.slice(0, 6).map((product: ProductDTO) => (
+            {TopsellProduct?.slice(0, 6).map((product: ProductDTO) => (
               <Topsellcard key={product.id} Product={product} />
             ))}
           </div>
