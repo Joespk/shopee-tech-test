@@ -5,6 +5,7 @@ import React from "react";
 import Flashsellcard from "@/src/components/card/Flashsellcard";
 import Image from "next/image";
 import flashsell from "@/public/flashselltime.png";
+import Topsellcard from "@/src/components/card/Topsellcard";
 
 export default async function Home() {
   const productlist = await fetchProduct();
@@ -17,7 +18,19 @@ export default async function Home() {
   return (
     <main>
       <section>
-        <div className="container flex flex-col items-center mx-auto py-8 md:py-24 relative ">
+        <div className="container flex flex-col items-center mx-auto pt-8 md:pt-24 relative ">
+          <h1 className="absolute top-14 left-[12.5%] text-orange-600">
+            ขายดีประจำสัปดาห์
+          </h1>
+          <div className="grid grid-cols-6 gap-2 mt-3 justify-around">
+            {FlashProducts?.slice(0, 6).map((product: ProductDTO) => (
+              <Topsellcard key={product.id} Product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container flex flex-col items-center mx-auto pt-8 pb-8 md:pt-24 relative ">
           <Image
             src={flashsell}
             alt="flashsell"
@@ -33,8 +46,8 @@ export default async function Home() {
       </section>
       <section>
         <div className="container flex flex-col items-center justify-around">
-          <h2 className="my-0 text-orange-500">สินค้าแนะนำประจำวัน</h2>
-          <hr className="w-[1200px] h-px mt-3 mb-4 bg-orange-500 border-2 text-orange-500" />
+          <h2 className="my-0 text-orange-600">สินค้าแนะนำประจำวัน</h2>
+          <hr className="w-[1200px] h-px mt-3 mb-4 bg-orange-500 border-2 text-orange-600" />
           <div className="grid grid-cols-6 gap-2 ">
             {products?.map((product: ProductDTO) => (
               <Simplecard key={product.id} Product={product} />
